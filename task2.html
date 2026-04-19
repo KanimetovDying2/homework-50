@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KB Task 2</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #121212;
+            color: #e0e0e0;
+        }
+
+        .layout {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .main {
+            display: flex;
+            flex: 1;
+        }
+
+        header,
+        footer {
+            background: #1f1f1f;
+            padding: 25px 40px;
+            border-bottom: 1px solid #333;
+        }
+
+        header {
+            letter-spacing: 2px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        footer {
+            border-top: 1px solid #333;
+            border-bottom: none;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .sidebar {
+            width: 240px;
+            background: #181818;
+            padding: 40px 20px;
+            border-right: 1px solid #333;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar a {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .sidebar a:hover {
+            color: #fff;
+            padding-left: 5px;
+        }
+
+        .content {
+            flex: 1;
+            padding: 40px;
+            max-width: 1200px;
+        }
+
+        .content h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        .content p {
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: #b0b0b0;
+            max-width: 800px;
+        }
+
+        .content img {
+            width: 100%;
+            max-height: 600px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        const Header = () => <header>[KYO] КАТАЛОГ ТОВАРОВ №1</header>;
+    
+            const Sidebar = () => (
+                <aside className="sidebar">
+                    <ul>
+                        <li><a href="#">1 Группа Товаров</a></li>
+                        <li><a href="#">2 Группа Товаров</a></li>
+                        <li><a href="#">3 Группа Товаров</a></li>
+                        <li><a href="#">4 Группа Товаров</a></li>
+                    </ul>
+                </aside>
+            );
+    
+            const Content = () => (
+                <main className="content">
+                    <h2>СУПЕРМАРКЕТ ЛУЧШИХ ТОВАРОВ</h2>
+                    <p>В нашем супермаркете вы сможете найти то, что ищете. И даже то, о чем и не думали мечтать. Только эксклюзивные поставки для жителей KYO.</p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Eliseevsky-1913._Colonial_department.jpg/1280px-Eliseevsky-1913._Colonial_department.jpg" alt="Магазин" />
+                </main>
+            );
+    
+            class Footer extends React.Component {
+            render() {
+            return <footer className="footer">Kyo Project 2026</footer>;
+            }
+            }
+    
+            const App = () => (
+                <div className="layout">
+                    <Header />
+                    <div className="main">
+                        <Sidebar />
+                        <Content />
+                    </div>
+                    <Footer />
+                </div>
+            );
+    
+            const root = ReactDOM.createRoot(document.getElementById('app'));
+            root.render(<App />);
+        </script>
+</body>
+
+</html>
