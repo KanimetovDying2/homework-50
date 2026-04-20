@@ -5,3 +5,5 @@ package.json
 package-lock.json
 app.ts
 tsconfig.json
+.idea/
+.DS_Store
