@@ -12,9 +12,15 @@
     <body>
         <div id="app"></div>
         <script type="text/babel">
-            const Header = () => <header>[KYO] КАТАЛОГ ТОВАРОВ №1</header>;
-        
-                const Sidebar = () => (
+            class Header extends React.Component {
+            render() {
+                return <header>[KYO] КАТАЛОГ ТОВАРОВ №1</header>;
+            }
+        }
+    
+        class Sidebar extends React.Component {
+            render() {
+                return (
                     <aside className="sidebar">
                         <ul>
                             <li><a href="#">1 Группа Товаров</a></li>
@@ -24,22 +30,30 @@
                         </ul>
                     </aside>
                 );
-        
-                const Content = () => (
+            }
+        }
+    
+        class Content extends React.Component {
+            render() {
+                return (
                     <main className="content">
                         <h2>СУПЕРМАРКЕТ ЛУЧШИХ ТОВАРОВ</h2>
                         <p>В нашем супермаркете вы сможете найти то, что ищете. И даже то, о чем и не думали мечтать. Только эксклюзивные поставки для жителей KYO.</p>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Eliseevsky-1913._Colonial_department.jpg/1280px-Eliseevsky-1913._Colonial_department.jpg" alt="Магазин" />
                     </main>
                 );
-        
-                class Footer extends React.Component {
-                render() {
+            }
+        }
+    
+        class Footer extends React.Component {
+            render() {
                 return <footer className="footer">Kyo Project 2026</footer>;
-                }
-                }
-        
-                const App = () => (
+            }
+        }
+    
+        class App extends React.Component {
+            render() {
+                return (
                     <div className="layout">
                         <Header />
                         <div className="main">
@@ -49,9 +63,11 @@
                         <Footer />
                     </div>
                 );
-        
-                const root = ReactDOM.createRoot(document.getElementById('app'));
-                root.render(<App />);
-            </script>
+            }
+        }
+    
+        const root = ReactDOM.createRoot(document.getElementById('app'));
+        root.render(<App />);
+    </script>
     </body>
 </html>
